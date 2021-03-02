@@ -1,6 +1,5 @@
-es
 lib
-dist
 node_modules
 .vscode
+.idea
 npm-debug.log*

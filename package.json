@@ -11,50 +11,49 @@
   },
   "homepage": "https://github.com/robinmalburn/redux-persist-chrome-storage#readme",
   "main": "lib/index.js",
-  "module": "es/index.js",
   "files": [
     "src",
-    "es",
     "lib",
-    "dist",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "npm run build:es && npm run build:cjs && npm run build:umd",
-    "build:es": "babel src --out-dir es",
-    "build:cjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
-    "build:umd": "cross-env BABEL_ENV=umd babel src --out-dir dist",
-    "clean": "rimraf es lib dist",
-    "test": "cross-env BABEL_ENV=test mocha test --require babel-register",
+    "build": "babel --out-file lib/index.js ./src/index.ts",
+    "prepublishOnly": "rimraf lib",
+    "test": "mocha",
     "lint": "eslint src"
   },
   "author": "Robin Malburn <robin.malburn@googlemail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/eslint-parser": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0",
+    "@babel/plugin-transform-modules-umd": "^7.0.0",
+    "@babel/plugin-transform-typescript": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@types/chai": "^4.2.15",
+    "@types/chai-as-promised": "^7.1.3",
+    "@types/chrome": "^0.0.133",
+    "@types/firefox-webext-browser": "^82.0.0",
+    "@types/mocha": "^8.2.1",
+    "@types/sinon-chrome": "^2.2.10",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "chai": "^4.3.0",
     "chai-as-promised": "^7.1.1",
-    "cross-env": "^5.1.3",
-    "eslint": "^4.18.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
-    "mocha": "^5.0.1",
-    "rimraf": "^2.6.2",
-    "sinon-chrome": "^2.2.4"
+    "eslint": "^7.21.0",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.3.0",
+    "rimraf": "^3.0.2",
+    "sinon-chrome": "^3.0.1",
+    "typescript": "^4.2.2"
   },
   "peerDependencies": {
     "redux-persist": ">=5.0"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
   }
 }
