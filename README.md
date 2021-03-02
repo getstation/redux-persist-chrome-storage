@@ -6,9 +6,9 @@ The main use case for this adaptor is when writing Chrome extensions and making 
 
 # Installation
 
-npm: `npm install redux-persist-chrome-storage`
+npm: `npm install @getstation/redux-persist-chrome-storage`
 
-yarn: `yarn add redux-persist-chrome-storage`
+yarn: `yarn add @getstation/redux-persist-chrome-storage`
 
 # Usage
 
